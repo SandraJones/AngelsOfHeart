@@ -335,13 +335,13 @@ textarea {
 }
 
 a {
-  color: #428bca;
+  color: rgba(0, 0, 0, 0.5);
   text-decoration: none;
 }
 
 a:hover,
 a:focus {
-  color: #2a6496;
+  color: rgba(0, 0, 0, 0.5);
   text-decoration: underline;
 }
 
@@ -2050,8 +2050,8 @@ fieldset[disabled] .btn {
 
 .btn-default {
   color: #333333;
-  background-color: #ffffff;
-  border-color: #cccccc;
+  background-color: #c09853;
+  border-color: #c09853;
 }
 
 .btn-default:hover,
@@ -2091,8 +2091,8 @@ fieldset[disabled] .btn-default.active {
 
 .btn-primary {
   color: #ffffff;
-  background-color: #428bca;
-  border-color: #357ebd;
+  background-color: grey;
+  border-color: grey;
 }
 
 .btn-primary:hover,
@@ -3279,7 +3279,7 @@ input[type="button"].btn-block {
 .dropdown-menu > li > a:focus {
   color: #ffffff;
   text-decoration: none;
-  background-color: #428bca;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .dropdown-menu > .active > a,
@@ -3287,7 +3287,7 @@ input[type="button"].btn-block {
 .dropdown-menu > .active > a:focus {
   color: #ffffff;
   text-decoration: none;
-  background-color: #428bca;
+  background-color: rgba(0, 0, 0, 0.5);
   outline: 0;
 }
 
@@ -4934,7 +4934,7 @@ a.list-group-item.active > .badge,
   font-weight: 200;
   line-height: 2.1428571435;
   color: inherit;
-  background-color: #eeeeee;
+  background-color: #c09853;
 }
 
 .jumbotron h1 {
