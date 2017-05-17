@@ -760,8 +760,8 @@ pre code {
 .container {
   padding-right: 15px;
   padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  margin-right: -15px;
+  margin-left: -15px;
 }
 
 .container:before,
@@ -4930,28 +4930,29 @@ a.list-group-item.active > .badge,
 
 .jumbotron {
   padding: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   font-size: 21px;
   font-weight: 200;
   line-height: 2.1428571435;
-  color: inherit;
-  background-color: #0099CC;
-  margin-top: 10px;
+  color: white;
+ /* margin-top: 10px;*/
   text-align: center;
+  background-image: url(elderlyWhiteWoman.jpg);
+  background-size: cover;
 }
 
 .jumbotron h1 {
   line-height: 1;
-  color: inherit;
+  color: white;
 }
 
 .jumbotron p {
   line-height: 1.4;
 }
-
+/*
 .container .jumbotron {
   border-radius: 6px;
-}
+}*/
 
 @media screen and (min-width: 768px) {
   .jumbotron {
