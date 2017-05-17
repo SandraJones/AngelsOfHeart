@@ -410,6 +410,8 @@ p {
   font-size: 16.099999999999998px;
   font-weight: 600;
   line-height: 1.4;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 @media (min-width: 768px) {
@@ -4929,7 +4931,7 @@ a.list-group-item.active > .badge,
 }
 
 .jumbotron {
-  padding: 30px;
+  padding: 10%;
   margin-bottom: 50px;
   font-size: 21px;
   font-weight: 200;
@@ -4939,7 +4941,7 @@ a.list-group-item.active > .badge,
   text-align: center;
   background-image: url(elderlyWhiteWomanLarge.jpg);
   background-size: cover;
-  margin-right: -31px;
+  margin-right: -30px;
 }
 
 .jumbotron h1 {
