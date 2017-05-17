@@ -316,6 +316,7 @@ body {
   line-height: 1.428571429;
   color: #333333;
   background-color: #ffffff;
+  font-weight: 600;
 }
 
 input,
@@ -407,7 +408,7 @@ p {
 .lead {
   margin-bottom: 20px;
   font-size: 16.099999999999998px;
-  font-weight: 200;
+  font-weight: 600;
   line-height: 1.4;
 }
 
@@ -474,7 +475,7 @@ h6,
 .h5,
 .h6 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.1;
 }
 
@@ -2060,8 +2061,8 @@ fieldset[disabled] .btn {
 .btn-default.active,
 .open .dropdown-toggle.btn-default {
   color: #333333;
-  background-color: red;
-  border-color: #adadad;
+  background-color: orange;
+  border-color: orange;
 }
 
 .btn-default:active,
@@ -4936,6 +4937,7 @@ a.list-group-item.active > .badge,
   color: inherit;
   background-color: #0099CC;
   margin-top: 10px;
+  text-align: center;
 }
 
 .jumbotron h1 {
