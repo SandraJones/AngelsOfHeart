@@ -2167,8 +2167,8 @@ fieldset[disabled] .btn-warning:active,
 .btn-warning.disabled.active,
 .btn-warning[disabled].active,
 fieldset[disabled] .btn-warning.active {
-  background-color: #5fffec;
-  border-color: #5fffec;
+  background-color: #0099CC;
+  border-color: #0099CC;
 }
 
 .btn-danger {
@@ -4934,7 +4934,7 @@ a.list-group-item.active > .badge,
   font-weight: 200;
   line-height: 2.1428571435;
   color: inherit;
-  background-color: #5fffec;
+  background-color: #0099CC;
   margin-top: 10px;
 }
 
