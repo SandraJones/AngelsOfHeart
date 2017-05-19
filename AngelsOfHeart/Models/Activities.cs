@@ -8,6 +8,7 @@ namespace AngelsOfHeart.Models
 {
     public class Activities
     {
+        public int ActivityId { get; set; }
         public string NameOfActivity { get; set; }
         public DateTime DateOfActivity { get; set; }
         public string NameOfActivityCoordinator { get; set; }

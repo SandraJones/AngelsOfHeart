@@ -216,7 +216,7 @@
     <Compile Include="Models\Activities.cs" />
     <Compile Include="Models\Donors.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\SiteVisitor.cs" />
+    <Compile Include="Models\SiteVisitors.cs" />
     <Compile Include="Models\Volunteers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />

@@ -10,7 +10,7 @@ namespace AngelsOfHeart.Models
     {
         public int DonorId { get; }
         protected string DonorLastName { get; set; }
-        protected string FirstName { get; set; }
+        protected string DonorFirstName { get; set; }
         protected string DonorTitle { get; set; }
         protected List<Donors> DonorList { get; set; }
         protected int LastDonation { get; set; }
