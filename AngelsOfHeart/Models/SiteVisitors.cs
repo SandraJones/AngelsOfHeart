@@ -5,8 +5,9 @@ using System.Web;
 
 namespace AngelsOfHeart.Models
 {
-    public class SiteVisitor
+    public class SiteVisitors
     {
+        public int SiteVisitorId { get; set; }
         public string Username { get; set; }
         public string Email { get; set; }
     }
