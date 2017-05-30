@@ -10,8 +10,25 @@ namespace AngelsOfHeart.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+           // ViewBag.Title = "Home Page";
 
+            return View();
+        }
+        public ActionResult Volunteer()
+        {
+            ViewBag.Message = "Volunteer Page";
+
+            return View();
+        }
+        public ActionResult Donate()
+        {
+            ViewBag.Message = "Donate Page";
+
+            return View();
+        }
+        public ActionResult Gallery()
+        {
+            ViewBag.Message = "Gallery Page";
             return View();
         }
     }
