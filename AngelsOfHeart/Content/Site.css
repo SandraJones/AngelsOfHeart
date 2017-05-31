@@ -17,3 +17,17 @@ select,
 textarea {
     max-width: 280px;
 }
+.holdingContainer {
+    align-content: center;
+}
+.welcomeVolunteerHeading {
+    color: red;
+    text-align: center;
+}
+.volunteerForm {
+    color: red;
+    text-align: center;
+}
+.submitButtonVolunteerPage {
+    margin-left: 4%;
+}

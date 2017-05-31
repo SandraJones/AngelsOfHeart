@@ -74,3 +74,4 @@ C:\Users\sandy\workspace\Projects\AngelsOfHeart\AngelsOfHeart\bin\Microsoft.Owin
 C:\Users\sandy\workspace\Projects\AngelsOfHeart\AngelsOfHeart\bin\System.Web.Http.Owin.xml
 C:\Users\sandy\workspace\Projects\AngelsOfHeart\AngelsOfHeart\obj\Debug\AngelsOfHeart.dll
 C:\Users\sandy\workspace\Projects\AngelsOfHeart\AngelsOfHeart\obj\Debug\AngelsOfHeart.pdb
+C:\Users\sandy\workspace\Projects\AngelsOfHeart\AngelsOfHeart\obj\Debug\AngelsOfHeart.csprojResolveAssemblyReference.cache

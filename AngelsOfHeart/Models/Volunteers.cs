@@ -15,5 +15,6 @@ namespace AngelsOfHeart.Models
         protected int VolLastActivity { get; set; }
         protected string VolEmail { get; set; }
         protected int VolPhoneNumber { get; set; }
+        protected string InterestArea { get; set; }
     }
 }
