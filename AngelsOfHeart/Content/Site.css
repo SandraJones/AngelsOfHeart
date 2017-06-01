@@ -22,12 +22,12 @@ textarea {
 }
 .welcomeVolunteerHeading {
     color: red;
-    text-align: center;
+    margin-left: 20%;
 }
 .volunteerForm {
     color: red;
-    text-align: center;
+    margin-left: 20%;
 }
 .submitButtonVolunteerPage {
-    margin-left: 10%;
+    margin-left: 15%;
 }
