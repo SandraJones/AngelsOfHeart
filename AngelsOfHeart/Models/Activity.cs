@@ -6,7 +6,7 @@ using System.ComponentModel;
 
 namespace AngelsOfHeart.Models
 {
-    public class Activities
+    public class Activity
     {
         public int ActivityId { get; set; }
         public string NameOfActivity { get; set; }
@@ -14,7 +14,7 @@ namespace AngelsOfHeart.Models
         public string NameOfActivityCoordinator { get; set; }
         public string EmailOfActivityCoordinator { get; set; }
         public int NoOfVolunteersNeeded { get; set; }
-        public List<Activities> ActivitiesList { get;}
+        public List<Activity> ActivitiesList { get;}
         
     }
 }
