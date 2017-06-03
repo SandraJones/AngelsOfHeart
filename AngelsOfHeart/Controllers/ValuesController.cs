@@ -1,4 +1,5 @@
 ﻿using AngelsOfHeart.DAL;
+using AngelsOfHeart.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,18 +13,26 @@ namespace AngelsOfHeart.Controllers
     public class ValuesController : ApiController
     {
         Repository repo = new Repository();
+        //GET api/<controller>
+        public List<Activity> Get()
+        {
+            var CurrentUser = User.Identity.Name;
+            //use this list of activities of specific users
+            var currentUserActivities = repo.GetAllActivitiesForCurrentUser(CurrentUser);
+            return currentUserActivities;
+        }
 
         // GET api/values
-        public IEnumerable<string> Get()
+        public IEnumerable<string> Get(int id)
         {
             return new string[] { "value1", "value2" };
         }
 
         // GET api/values/5
-        public string Get(int id)
-        {
-            return "value";
-        }
+       // public string Get(int id)
+        //{
+        //    return "value";
+       // }
 
         // POST api/values
         public void Post([FromBody]string value)

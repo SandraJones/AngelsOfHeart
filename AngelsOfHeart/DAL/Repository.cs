@@ -8,12 +8,12 @@ namespace AngelsOfHeart.DAL
 {
     public class Repository
     {
-        public VolunteerContext Context { get; set; }
+        public AngelContext Context { get; set; }
         public Repository()
         {
-            Context = new VolunteerContext();
+            Context = new AngelContext();
         }
-        public Repository(VolunteerContext _context)
+        public Repository(AngelContext _context)
         {
             Context = _context;
         }
@@ -150,7 +150,38 @@ namespace AngelsOfHeart.DAL
         }
         public List<Activity> GetAllActivitiesForCurrentUser(string UserName)
         {
-            return Context.Activities.Where(activity => activity.);
+            return Context.Activities.Where(activity => activity.AngelUser.BaseUser.UserName == UserName).ToList();
         }
+        public AngelUser GetUserByUserName(string UserName)
+        {
+            return Context.AngelUsers.Where(a => a.BaseUser.UserName == UserName).FirstOrDefault();
+        }
+
+
+        public void CreateAngelUser(string UserName)
+        {
+            var user = GetAppUserByUserName(UserName);
+            var AngelUserFirst = new AngelUser();
+            AngelUserFirst.BaseUser = user;
+            Context.AngelUsers.Add(AngelUserFirst);
+            Context.SaveChanges();
+        }
+
+        public ApplicationUser GetAppUserByUserName(string UserName)
+        {
+            return Context.Users.FirstOrDefault(u => u.UserName == UserName);
+        }
+        //check to see if UserName exists in DB
+        public bool UserNameExists(string e)
+        {
+            AngelUser found_User = Context.AngelUsers.FirstOrDefault(r => r.BaseUser.UserName.ToLower() == e.ToLower());
+            if (found_User != null)
+            {
+                return true;
+            }
+            return false;
+
+        }
+
     }
 }
