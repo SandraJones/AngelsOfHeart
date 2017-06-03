@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AngelsOfHeart.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,6 +11,8 @@ namespace AngelsOfHeart.Controllers
     [Authorize]
     public class ValuesController : ApiController
     {
+        Repository repo = new Repository();
+
         // GET api/values
         public IEnumerable<string> Get()
         {

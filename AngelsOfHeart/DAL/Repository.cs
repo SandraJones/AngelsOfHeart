@@ -96,9 +96,61 @@ namespace AngelsOfHeart.DAL
             Context.Entry(_siteVisitor).State = System.Data.Entity.EntityState.Modified;
             Context.SaveChanges();
         }
-
-
-
-
+        public Activity GetActivityById(int activity_Id)
+        {
+            Activity found_activity = Context.Activities.FirstOrDefault(i => i.ActivityId == activity_Id);
+            if (found_activity != null)
+            {
+                return found_activity;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public Donor GetDonorById(int donor_Id)
+        {
+            Donor found_donor = Context.Donors.FirstOrDefault(i => i.DonorId == donor_Id);
+            if (found_donor != null)
+            {
+                return found_donor;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public Volunteer GetVolunteerById(int vol_Id)
+        {
+            Volunteer found_volunteer = Context.Volunteers.FirstOrDefault(i => i.VolId == vol_Id);
+            if (found_volunteer != null)
+            {
+                return found_volunteer;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public SiteVisitor GetSiteVisitorById(int _siteVisitorId)
+        {
+            SiteVisitor found_siteVisitor = Context.SiteVisitors.FirstOrDefault(v => v.SiteVisitorId == _siteVisitorId);
+            if (found_siteVisitor != null)
+            {
+                return found_siteVisitor;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public List<Activity> GetAllActivitiesForAllUsers()
+        {
+            return Context.Activities.ToList();
+        }
+        public List<Activity> GetAllActivitiesForCurrentUser(string UserName)
+        {
+            return Context.Activities.Where(activity => activity.);
+        }
     }
 }

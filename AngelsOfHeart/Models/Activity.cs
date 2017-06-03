@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel;
+using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 
 namespace AngelsOfHeart.Models
 {
@@ -14,7 +16,17 @@ namespace AngelsOfHeart.Models
         public string NameOfActivityCoordinator { get; set; }
         public string EmailOfActivityCoordinator { get; set; }
         public int NoOfVolunteersNeeded { get; set; }
-        public List<Activity> ActivitiesList { get;}
-        
+        public List<Activity> ActivitiesList { get; set; }
+
+        [JsonIgnoreAttribute]
+        public virtual AngelUser AngelUser { get; set; }        
+    }
+
+    public class AngelActivityViewModel
+    {
+        [Required]
+        public string ActivityName { get; set; }
+        public DateTime Date { get; set; }
+        public virtual AngelUser AngelUser { get; set; }
     }
 }
