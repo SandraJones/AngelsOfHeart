@@ -16,5 +16,6 @@ namespace AngelsOfHeart.Models
         protected string VolEmail { get; set; }
         protected int VolPhoneNumber { get; set; }
         protected string InterestArea { get; set; }
+        public virtual AngelUser AngelUser { get; set; }
     }
 }

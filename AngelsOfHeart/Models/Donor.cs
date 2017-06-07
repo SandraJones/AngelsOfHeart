@@ -16,5 +16,6 @@ namespace AngelsOfHeart.Models
         protected int LastDonation { get; set; }
         protected string DonorEmail { get; set; }
         protected int DonorPhoneNumber { get; set; }
+        public virtual AngelUser AngelUser { get; set; }
     }
 }
