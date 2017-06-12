@@ -35,6 +35,12 @@ namespace AngelsOfHeart.DAL
             Context.Volunteers.Add(_volunteer);
             Context.SaveChanges();
         }
+        //ADD BOARDMEMBER
+        public void AddBoardMember(BoardMember _boardMember)
+        {
+            Context.BoardMembers.Add(_boardMember);
+            Context.SaveChanges();
+        }
         //ADD SITEVISITOR
         public void AddSiteVisitor(SiteVisitor _siteVisitor)
         {
