@@ -23,18 +23,28 @@ namespace AngelsOfHeart.Controllers
         }
 
         // GET api/values
+        //GetActivity
         public IEnumerable<string> Get(int id)
         {
-            return new string[] { "value1", "value2" };
+            return repo.GetActivityById(id);
         }
-
-        // GET api/values/5
-       // public string Get(int id)
-        //{
-        //    return "value";
-       // }
-
-        // POST api/values
+        //GetDonor
+        protected IEnumerable<string> Get(int id)
+        {
+            return repo.GetDonorById(id);
+        }
+        //GetVolunteer
+        public IEnumerable<string> Get(int id)
+        {
+            return repo.GetVolunteerById(id);
+        }
+        //GetBoardMember
+        public IEnumerable<string> Get(int id)
+        {
+            return repo.GetBoardMemberById(id);
+        }
+    }
+            
         public void Post([FromBody]string value)
         {
         }
