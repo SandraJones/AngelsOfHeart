@@ -24,22 +24,22 @@ namespace AngelsOfHeart.Controllers
 
         // GET api/values
         //GetActivity
-        public IEnumerable<string> Get(int id)
+        public Activity Get(int id, [FromBody]Activity value)
         {
             return repo.GetActivityById(id);
         }
         //GetDonor
-        protected IEnumerable<string> Get(int id)
+        protected Donor Get(int id, [FromBody]Donor value)
         {
             return repo.GetDonorById(id);
         }
         //GetVolunteer
-        public IEnumerable<string> Get(int id)
+        public Volunteer Get(int id, [FromBody]Volunteer value)
         {
             return repo.GetVolunteerById(id);
         }
         //GetBoardMember
-        public IEnumerable<string> Get(int id)
+        public BoardMember Get(int id, [FromBody]BoardMember value)
         {
             return repo.GetBoardMemberById(id);
         }
@@ -47,25 +47,25 @@ namespace AngelsOfHeart.Controllers
         //POST api/<controller>    
         public void Post(Activity activity)
         {
-            var currentUser = repo.GetUserByUserName(currentUser.Identity.Name);
+            var currentUser = repo.GetUserByUserName(User.Identity.Name);
             activity.AngelUser = currentUser;
             repo.AddActivity(activity);
         }
         public void Post(Volunteer volunteer)
         {
-            var currentUser = repo.GetUserByUserName(currentUser.Identity.Name);
+            var currentUser = repo.GetUserByUserName(User.Identity.Name);
             volunteer.AngelUser = currentUser;
             repo.AddVolunteer(volunteer);
         }
         protected void Post(Donor donor)
         {
-            var currentUser = repo.GetUserByUserName(currentUser.Identity.Name);
+            var currentUser = repo.GetUserByUserName(User.Identity.Name);
             donor.AngelUser = currentUser;
             repo.AddDonor(donor);
         }
         public void Post(BoardMember boardMember)
         {
-            var currentUser = repo.GetUserByName(currentUser.Identity.Name);
+            var currentUser = repo.GetUserByUserName(User.Identity.Name);
             boardMember.AngelUser = currentUser;
             repo.AddBoardMember(boardMember);
         }  
@@ -73,22 +73,22 @@ namespace AngelsOfHeart.Controllers
         // PUT api/values/5
         public void Put(int id, [FromBody]Activity value)
         {
-            var activityToBeUpdated = repo.GetActivityById(Id);
+            var activityToBeUpdated = repo.GetActivityById(id);
             repo.UpdateActivity(value);
         }
         public void Put(int id, [FromBody]BoardMember value)
         {
-            var boardMemberToBeUpdated = repo.GetBoardMemberById(Id);
+            var boardMemberToBeUpdated = repo.GetBoardMemberById(id);
             repo.UpdateBoardMember(value);
         }
         protected void Put(int id, [FromBody]Donor value)
         {
-            var donorToBeUpdated = repo.GetDonorMemberById(Id);
+            var donorToBeUpdated = repo.GetDonorById(id);
             repo.UpdateDonor(value);
         }
         public void Put(int id, [FromBody]Volunteer value)
         {
-            var volunteerToBeUpdated = repo.GetVolunteerById(Id);
+            var volunteerToBeUpdated = repo.GetVolunteerById(id);
             repo.UpdateVolunteer(value);
         }
                 
@@ -96,19 +96,19 @@ namespace AngelsOfHeart.Controllers
         [HttpDelete]
         public void Delete(int id, [FromBody]Activity value)
         {
-            repo.RemoveActivity(Id);
+            repo.RemoveActivity(id);
         }
 
         [HttpDelete]
         public void Delete(int id, [FromBody]BoardMember value)
         {
-            repo.RemoveBoardMember(Id);
+            repo.RemoveBoardMember(id);
         }
 
         [HttpDelete]
         protected void Delete(int id, [FromBody]Donor value)
         {
-            repo.RemoveDonor(Id);
+            repo.RemoveDonor(id);
         }
 
         [HttpDelete]

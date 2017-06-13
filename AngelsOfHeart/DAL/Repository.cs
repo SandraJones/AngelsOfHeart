@@ -17,30 +17,35 @@ namespace AngelsOfHeart.DAL
         {
             Context = _context;
         }
+
         //ADD ACTIVITY
         public void AddActivity(Activity _activity)
         {
             Context.Activities.Add(_activity);
             Context.SaveChanges();
         }
+
         //ADD DONOR
         public void AddDonor(Donor _donor)
         {
             Context.Donors.Add(_donor);
             Context.SaveChanges();
         }
+
         //ADD VOLUNTEER
         public void AddVolunteer(Volunteer _volunteer)
         {
             Context.Volunteers.Add(_volunteer);
             Context.SaveChanges();
         }
+
         //ADD BOARDMEMBER
         public void AddBoardMember(BoardMember _boardMember)
         {
             Context.BoardMembers.Add(_boardMember);
             Context.SaveChanges();
         }
+
         //ADD SITEVISITOR
         public void AddSiteVisitor(SiteVisitor _siteVisitor)
         {
@@ -57,6 +62,7 @@ namespace AngelsOfHeart.DAL
             Context.SaveChanges();
             }
         }
+
         //REMOVE DONOR
         public void RemoveDonor(int _donorId)
         {
@@ -68,6 +74,7 @@ namespace AngelsOfHeart.DAL
                 Context.SaveChanges();
             }
         }
+
         //REMOVE VOLUNTEER
         public void RemoveVolunteer(int _volunteerId)
         {
@@ -79,6 +86,18 @@ namespace AngelsOfHeart.DAL
                 Context.SaveChanges();
             }
         }
+
+        //REMOVE BOARDMEMBER
+        public void RemoveBoardMember(int _boardMemberId)
+        {
+            if (_boardMemberId != 0)
+            {
+                var BoardMember = Context.BoardMembers.Find(_boardMemberId);
+                Context.BoardMembers.Remove(BoardMember);
+                Context.SaveChanges();
+            }
+        }
+
         //REMOVE SITEVISITOR
         public void RemoveSiteVisitor(int _siteVisitorId)
         {
@@ -90,30 +109,41 @@ namespace AngelsOfHeart.DAL
                 Context.SaveChanges();
             }
         }
+
         //UPDATE ACTIIVTY
         public void UpdateActivity(Activity _activity)
         {
             Context.Entry(_activity).State = System.Data.Entity.EntityState.Modified;
             Context.SaveChanges();
         }
+
         //UPDATE DONOR
         public void UpdateDonor(Donor _donor)
         {
             Context.Entry(_donor).State = System.Data.Entity.EntityState.Modified;
             Context.SaveChanges();
         }
+
         //UPDATE VOLUNTEER
         public void UpdateVolunteer(Volunteer _volunteer)
         {
             Context.Entry(_volunteer).State = System.Data.Entity.EntityState.Modified;
             Context.SaveChanges();
         }
+
+        //UPDATE BOARDMEMBER
+        public void UpdateBoardMember(BoardMember _boardMember)
+        {
+            Context.Entry(_boardMember).State = System.Data.Entity.EntityState.Modified;
+        }
+
         //UPDATE SITEVISITOR
         public void UpdateSiteVisitor(SiteVisitor _siteVisitor)
         {
             Context.Entry(_siteVisitor).State = System.Data.Entity.EntityState.Modified;
             Context.SaveChanges();
         }
+
         //GET ACTIVITY BY ID
         public Activity GetActivityById(int activity_Id)
         {
@@ -127,6 +157,7 @@ namespace AngelsOfHeart.DAL
                 return null;
             }
         }
+
         //GET DONOR BY ID
         public Donor GetDonorById(int donor_Id)
         {
@@ -140,6 +171,7 @@ namespace AngelsOfHeart.DAL
                 return null;
             }
         }
+
         //GET VOLUNTEER BY ID
         public Volunteer GetVolunteerById(int vol_Id)
         {
@@ -153,6 +185,21 @@ namespace AngelsOfHeart.DAL
                 return null;
             }
         }
+
+        //GET BOARDMEMBER BY ID
+        public BoardMember GetBoardMemberById(int _boardMemberId)
+        {
+            BoardMember found_boardMember = Context.BoardMembers.FirstOrDefault(b => b.BoardMemberId == _boardMemberId);
+            if (found_boardMember != null)
+            {
+                return found_boardMember;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         //GET SITEVISITOR BY ID
         public SiteVisitor GetSiteVisitorById(int _siteVisitorId)
         {
@@ -166,36 +213,49 @@ namespace AngelsOfHeart.DAL
                 return null;
             }
         }
+
         //GET ALL ACTIVITIES FOR ALL USERS
         public List<Activity> GetAllActivitiesForAllUsers()
         {
             return Context.Activities.ToList();
         }
+
         //GET ALL ACTIVITIES FOR CURRENT USER
         public List<Activity> GetAllActivitiesForCurrentUser(string UserName)
         {
             return Context.Activities.Where(activity => activity.AngelUser.BaseUser.UserName == UserName).ToList();
         }
+
         //GET USER BY USERNAME
         public AngelUser GetUserByUserName(string UserName)
         {
             return Context.AngelUsers.Where(a => a.BaseUser.UserName == UserName).FirstOrDefault();
         }
+
         //GET ALL VOLUNTEERS
         public List<Volunteer> GetAllVolunteers()
         {
             return Context.Volunteers.ToList();
         }
+
         //GET ALL DONORS
         public List<Donor> GetAllDonors()
         {
             return Context.Donors.ToList();
         }
+
+        //GET ALL BOARDMEMBERS
+        public List<BoardMember> GetAllBoardMembers()
+        {
+            return Context.BoardMembers.ToList();
+        }
+
         //GET ALL SITEVISITORS
         public List<SiteVisitor> GetAllSiteVisitors()
         {
             return Context.SiteVisitors.ToList();
         }
+
         //CREATE ANGELUSER
         public void CreateAngelUser(string UserName)
         {
@@ -205,11 +265,13 @@ namespace AngelsOfHeart.DAL
             Context.AngelUsers.Add(AngelUserFirst);
             Context.SaveChanges();
         }
+
         //GET APP USER BY USERNAME
         public ApplicationUser GetAppUserByUserName(string UserName)
         {
             return Context.Users.FirstOrDefault(u => u.UserName == UserName);
         }
+
         //check to see if UserName exists in DB
         public bool UserNameExists(string e)
         {
