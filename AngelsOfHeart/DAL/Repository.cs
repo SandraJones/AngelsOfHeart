@@ -60,6 +60,13 @@ namespace AngelsOfHeart.DAL
             Context.SaveChanges();
         }
 
+        //ADD ASSOCIATE
+        public void AddAssociate(Associate _associate)
+        {
+            Context.Associates.Add(_associate);
+            Context.SaveChanges();
+        }
+
         //REMOVE ACTIVITY
         public void RemoveActivity(int _activityId)
         {
@@ -117,6 +124,28 @@ namespace AngelsOfHeart.DAL
                 Context.SaveChanges();
             }
         }
+        //REMOVE DONATION
+        public void RemoveDonation(int _donationId)
+        {
+            if (_donationId != 0)
+            {
+
+                var Donation = Context.Donations.Find(_donationId);
+                Context.Donations.Remove(Donation);
+                Context.SaveChanges();
+            }
+        }
+        //REMOVE ASSOCIATE
+        public void RemoveAssociate(int _associateId)
+        {
+            if (_associateId != 0)
+            {
+
+                var Associate = Context.Associates.Find(_associateId);
+                Context.Associates.Remove(Associate);
+                Context.SaveChanges();
+            }
+        }
 
         //UPDATE ACTIIVTY
         public void UpdateActivity(Activity _activity)
@@ -149,6 +178,20 @@ namespace AngelsOfHeart.DAL
         public void UpdateSiteVisitor(SiteVisitor _siteVisitor)
         {
             Context.Entry(_siteVisitor).State = System.Data.Entity.EntityState.Modified;
+            Context.SaveChanges();
+        }
+
+        //UPDATE DONATION
+        public void UpdateDonation(Donation _donation)
+        {
+            Context.Entry(_donation).State = System.Data.Entity.EntityState.Modified;
+            Context.SaveChanges();
+        }
+
+        //UPDATE ASSOCIATE
+        public void UpdateAssociate(Associate _associate)
+        {
+            Context.Entry(_associate).State = System.Data.Entity.EntityState.Modified;
             Context.SaveChanges();
         }
 
@@ -222,6 +265,34 @@ namespace AngelsOfHeart.DAL
             }
         }
 
+        //GET DONATION BY ID
+        public Donation GetDonationById(int _donationId)
+        {
+            Donation found_donationId = Context.Donations.FirstOrDefault(v => v.DonationId == _donationId);
+            if (found_donationId != null)
+            {
+                return found_donationId;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        //GET ASSOCIATE BY ID
+        public Associate GetAssociateById(int _associateId)
+        {
+            Associate found_associateId = Context.Associates.FirstOrDefault(v => v.AssociateId == _associateId);
+            if (found_associateId != null)
+            {
+                return found_associateId;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         //GET ALL ACTIVITIES FOR ALL USERS
         public List<Activity> GetAllActivitiesForAllUsers()
         {
@@ -262,6 +333,18 @@ namespace AngelsOfHeart.DAL
         public List<SiteVisitor> GetAllSiteVisitors()
         {
             return Context.SiteVisitors.ToList();
+        }
+
+        //GET ALL DONATIONS
+        public List<Donation> GetAllDonations()
+        {
+            return Context.Donations.ToList();
+        }
+
+        //GET ALL ASSOCIATES
+        public List<Associate> GetAllAssociates()
+        {
+            return Context.Associates.ToList();
         }
 
         //CREATE ANGELUSER
