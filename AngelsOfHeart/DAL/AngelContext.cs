@@ -15,5 +15,6 @@ namespace AngelsOfHeart.DAL
         public virtual DbSet<Activity> Activities { get; set; }
         public virtual DbSet<SiteVisitor> SiteVisitors { get; set; }
         public virtual DbSet<BoardMember> BoardMembers { get; set; }
+        public virtual DbSet<Donation> Donations { get; set; }
     }
 }

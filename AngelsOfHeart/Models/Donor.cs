@@ -9,13 +9,11 @@ namespace AngelsOfHeart.Models
     public class Donor
     {
         public int DonorId { get; }
-        protected string DonorLastName { get; set; }
-        protected string DonorFirstName { get; set; }
-        protected string DonorTitle { get; set; }
-        protected List<Donor> DonorList { get; set; }
+        public int DonationId { get; set; }
+        public int AssociateId {get;set;}
+        protected int TotalDonationsToDate { get; set; }
         protected int LastDonation { get; set; }
-        protected string DonorEmail { get; set; }
-        protected int DonorPhoneNumber { get; set; }
         public virtual AngelUser AngelUser { get; set; }
+        protected List<Donor> DonorList { get; set; }
     }
 }

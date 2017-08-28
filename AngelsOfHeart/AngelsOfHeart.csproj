@@ -217,7 +217,9 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Activity.cs" />
     <Compile Include="Models\AngelUser.cs" />
+    <Compile Include="Models\Associate.cs" />
     <Compile Include="Models\BoardMember.cs" />
+    <Compile Include="Models\Donation.cs" />
     <Compile Include="Models\Donor.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\SiteVisitor.cs" />

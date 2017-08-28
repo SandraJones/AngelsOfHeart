@@ -52,6 +52,14 @@ namespace AngelsOfHeart.DAL
             Context.SiteVisitors.Add(_siteVisitor);
             Context.SaveChanges();
         }
+
+        //ADD DONATION
+        public void AddDonation (Donation _donation)
+        {
+            Context.Donations.Add(_donation);
+            Context.SaveChanges();
+        }
+
         //REMOVE ACTIVITY
         public void RemoveActivity(int _activityId)
         {
