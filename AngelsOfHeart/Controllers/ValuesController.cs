@@ -44,6 +44,18 @@ namespace AngelsOfHeart.Controllers
             return repo.GetBoardMemberById(id);
         }
 
+        //GetDonation
+        public Donation Get(int id, [FromBody]Donation value)
+        {
+            return repo.GetDonationById(id);
+        }
+
+        //GetAssociate
+        public Associate Get(int id, [FromBody]Associate value)
+        {
+            return repo.GetAssociateById(id);
+        }
+
         //POST api/<controller>    
         public void Post(Activity activity)
         {
@@ -68,8 +80,22 @@ namespace AngelsOfHeart.Controllers
             var currentUser = repo.GetUserByUserName(User.Identity.Name);
             boardMember.AngelUser = currentUser;
             repo.AddBoardMember(boardMember);
-        }  
-            
+        }
+
+        public void Post(Donation donation)
+        {
+            var currentUser = repo.GetUserByUserName(User.Identity.Name);
+            donation.AngelUser = currentUser;
+            repo.AddDonation(donation);
+        }
+
+        public void Post(Associate associate)
+        {
+            var currentUser = repo.GetUserByUserName(User.Identity.Name);
+            associate.AngelUser = currentUser;
+            repo.AddAssociate(associate);
+        }
+
         // PUT api/values/5
         public void Put(int id, [FromBody]Activity value)
         {
@@ -91,7 +117,20 @@ namespace AngelsOfHeart.Controllers
             var volunteerToBeUpdated = repo.GetVolunteerById(id);
             repo.UpdateVolunteer(value);
         }
-                
+
+        public void Put(int id, [FromBody]Donation value)
+        {
+            var donationToBeUpdated = repo.GetDonationById(id);
+            repo.UpdateDonation(value);
+        }
+
+        public void Put(int id, [FromBody]Associate value)
+        {
+            var associateToBeUpdated = repo.GetAssociateById(id);
+            repo.UpdateAssociate(value);
+        }
+
+
         // DELETE api/values/5
         [HttpDelete]
         public void Delete(int id, [FromBody]Activity value)
@@ -115,6 +154,16 @@ namespace AngelsOfHeart.Controllers
         public void Delete(int id, [FromBody]Volunteer value)
         {
             repo.RemoveVolunteer(id);
+        }
+        [HttpDelete]
+        public void Delete(int id, [FromBody]Donation value)
+        {
+            repo.RemoveDonation(id);
+        }
+        [HttpDelete]
+        public void Delete(int id, [FromBody]Associate value)
+        {
+            repo.RemoveAssociate(id);
         }
     }
 }

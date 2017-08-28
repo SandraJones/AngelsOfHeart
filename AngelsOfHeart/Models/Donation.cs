@@ -10,5 +10,6 @@ namespace AngelsOfHeart.Models
         public int DonationId { get; set; }
         public DateTime DonationDate { get; set; }
         public int DonationAmt { get; set; }
+        public virtual AngelUser AngelUser { get; set; }
     }
 }

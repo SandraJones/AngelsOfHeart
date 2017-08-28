@@ -12,5 +12,6 @@ namespace AngelsOfHeart.Models
         public int APhoneNumber { get; set; }
         public string AEmail {get;set;}
         public string AAddress { get; set; }
+        public virtual AngelUser AngelUser { get; set; }
     }
 }
