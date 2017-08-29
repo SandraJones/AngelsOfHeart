@@ -14,6 +14,8 @@ namespace AngelsOfHeart.Controllers
     {
         Repository repo = new Repository();
         //GET api/<controller>
+
+        //Methods referenced here are located in the Repository.cs file.
         public List<Activity> Get()
         {
             var CurrentUser = User.Identity.Name;
